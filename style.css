@@ -1,0 +1,159 @@
+body {
+    background-color: #7fc042;
+    background-image:
+        linear-gradient(180deg, #a5d17a 0%, #7fc042 55%, #5a8f36 70%, #4a6b27 100%),
+        linear-gradient(90deg, rgba(255,255,255,0.15) 12.5%, transparent 12.5%, transparent 25%, rgba(255,255,255,0.15) 25%, rgba(255,255,255,0.15) 37.5%, transparent 37.5%, transparent 50%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 62.5%, transparent 62.5%, transparent 75%, rgba(255,255,255,0.15) 75%, rgba(255,255,255,0.15) 87.5%, transparent 87.5%, transparent),
+        linear-gradient(180deg, rgba(0,0,0,0.08) 12.5%, transparent 12.5%, transparent 25%, rgba(0,0,0,0.08) 25%, rgba(0,0,0,0.08) 37.5%, transparent 37.5%, transparent 50%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.08) 62.5%, transparent 62.5%, transparent 75%, rgba(0,0,0,0.08) 75%, rgba(0,0,0,0.08) 87.5%, transparent 87.5%, transparent);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    width: 600px;
+    height: 200px;
+    border-bottom: 2px solid #535353;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.game-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    background-color: #6aa84f;
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,0.18) 12.5%, transparent 12.5%, transparent 25%, rgba(0,0,0,0.12) 25%, rgba(0,0,0,0.12) 37.5%, transparent 37.5%, transparent 50%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.18) 62.5%, transparent 62.5%, transparent 75%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0.12) 87.5%, transparent 87.5%, transparent),
+        linear-gradient(180deg, #7fc142 0%, #6aa84f 50%, #5a8f36 100%);
+    background-size: 24px 24px, 100% 100%;
+}
+
+#dino {
+    width: 96px;                     /* Bigger width for the player sprite */
+    height: 168px;                   /* Bigger height for the player sprite */
+    background-image: url('steve.png.png'); /* Loads your saved image asset */
+    background-size: auto 100%;      /* Keep aspect ratio and align feet to the bottom */
+    background-position: center 110%;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -12px;                    /* Shift down so feet sit on the floor */
+    left: 20px;
+}
+
+.jump {
+    animation: jumpAnimation 0.5s linear;
+}
+
+@keyframes jumpAnimation {
+    0% { bottom: 0; }
+    40% { bottom: 100px; }
+    60% { bottom: 100px; }
+    100% { bottom: 0; }
+}
+
+#cactus {
+    width: 48px;
+    height: 96px;
+    background-image: url('dripstone.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: absolute;
+    bottom: 0;
+    left: 560px;
+}
+
+.block-animate {
+    animation: blockAnimation 1.5s infinite linear;
+}
+
+@keyframes blockAnimation {
+    0% { left: 600px; }
+    100% { left: -20px; }
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #535353;
+}
+
+#high-score {
+    position: absolute;
+    top: 10px;
+    right: 210px;
+    font-size: 20px;
+    color: #535353;
+}
+
+#game-over-text {
+    display: none;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+#milestone-text {
+    display: none;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 220px; /* above the game container */
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+#cheat-panel {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.95);
+    padding: 8px 10px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#cheat-panel input {
+    width: 90px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#cheat-panel button {
+    padding: 6px 8px;
+    border: none;
+    background: #4caf50;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#cheat-status {
+    font-size: 13px;
+    color: #333;
+    margin-left: 6px;
+}
