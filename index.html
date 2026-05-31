@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft of 1$</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="score">Score: 0</div>
+        <div id="high-score">High Score: 0</div>
+        <div id="dino"></div>
+        <div id="cactus"></div>
+    </div>
+    <div id="cheat-panel">
+        <input id="cheat-code" placeholder="Enter code" maxlength="10">
+        <button id="cheat-apply">Apply</button>
+        <div id="cheat-status" aria-live="polite"></div>
+    </div>
+    <audio id="bg-music" loop>
+        <source src="c418.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="walking-sound" loop>
+        <source src="walking.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="death-sound">
+        <source src="death.mp3" type="audio/mpeg">
+    </audio>
+    <div id="game-over-text">Steve was impaled on a stalagmite. Press space to respawn</div>
+    <div id="milestone-text" aria-live="polite">Congrats on reaching 350</div>
+    <script src="script.js"></script>
+</body>
+</html>
