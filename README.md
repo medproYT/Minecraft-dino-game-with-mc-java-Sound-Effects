@@ -12,4 +12,6 @@ A reimagining of the classic Google Chrome offline Dinosaur game, completely ove
 
 
 # How To Download
-Download the files as a ZIP file and extract them in a single file
+Download the files as a ZIP file and extract them in a single folder, then simply open the index.html
+
+(note: do not open the game without its files in the same directory)
